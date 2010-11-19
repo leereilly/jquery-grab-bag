@@ -41,7 +41,17 @@
         
         <p>Some fun little text effects. These manipulate <code>$(ele).text()</code> so will
           probably be disastrously broken with inner HTML content.</p>
-        
+
+        <h3>DNA Decryption</h3>
+        <pre>$("#my-container").dnaDecrypt();</pre>
+        <p><a href='#' onclick='$("#dnaDecrypt").dnaDecrypt(); return false;'>Run demo</a></p>
+        <div id='dnaDecrypt'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+        <h3>Binary Decryption</h3>
+        <pre>$("#my-container").binaryDecrypt();</pre>
+        <p><a href='#' onclick='$("#binaryDecrypt").binaryDecrypt(); return false;'>Run demo</a></p>
+        <div id='binaryDecrypt'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
         <h3>ROT-13</h3>
         <p>(also applies ROT-5 to numerics)</p>
         <pre>$("#my-container").rot13();</pre>
