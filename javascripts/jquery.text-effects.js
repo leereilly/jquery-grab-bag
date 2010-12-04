@@ -39,6 +39,68 @@
         });
         return this;
     };    
+
+    $.fn.dnaUnscramble = function() {
+        this.each(function() {
+            var $ele = $(this), str = $ele.text(), replace = /[^\s]/,
+                state = [], choose = [], reveal = 25, random = randomDNA;
+            
+            for (var i = 0; i < str.length; i++) {
+                if (str[i].match(replace)) {
+                    state.push(random());
+                    choose.push(i);
+                } else {
+                    state.push(str[i]);
+                }
+            }
+            
+            shuffle(choose);
+            $ele.text(state.join(''));
+            
+            var timer = setInterval(function() {
+                var i, r = reveal;
+                while (r-- && choose.length) {
+                    i = choose.pop();
+                    state[i] = str[i];
+                }
+                for (i = 0; i < choose.length; i++) state[choose[i]] = random();
+                $ele.text(state.join(''));
+                if (choose.length == 0) clearInterval(timer);
+            }, 100);
+        });
+        return this;
+    };
+
+    $.fn.binaryUnscramble = function() {
+        this.each(function() {
+            var $ele = $(this), str = $ele.text(), replace = /[^\s]/,
+                state = [], choose = [], reveal = 25, random = randomBinary;
+            
+            for (var i = 0; i < str.length; i++) {
+                if (str[i].match(replace)) {
+                    state.push(random());
+                    choose.push(i);
+                } else {
+                    state.push(str[i]);
+                }
+            }
+            
+            shuffle(choose);
+            $ele.text(state.join(''));
+            
+            var timer = setInterval(function() {
+                var i, r = reveal;
+                while (r-- && choose.length) {
+                    i = choose.pop();
+                    state[i] = str[i];
+                }
+                for (i = 0; i < choose.length; i++) state[choose[i]] = random();
+                $ele.text(state.join(''));
+                if (choose.length == 0) clearInterval(timer);
+            }, 100);
+        });
+        return this;
+    };
     
     function shuffle(a) {
         var i = a.length, j;
