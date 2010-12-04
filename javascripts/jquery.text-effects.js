@@ -1,7 +1,7 @@
 (function($) {
 
     function randomDNA() {
-        var rnd = Math.floor(Math.random() * 3);
+        var rnd = Math.floor(Math.random()*4)
 	if (rnd == 0) return 'A'
         else if (rnd == 1) return 'C'
         else if (rnd == 2) return 'T'
